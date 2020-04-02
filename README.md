@@ -5,7 +5,7 @@ It searches for the latest data on cases of corona viruses from around the world
 
 Source of Data
 Special thanks to Novel Covid API for providing free APIs to fetch data.
-
+https://corona.lmao.ninja/
 ## Getting Started
 
 This project is a starting point for a Flutter application.
