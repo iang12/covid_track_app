@@ -11,7 +11,6 @@ class CountryRepository {
       Country model = Country.fromJson(json);
       countries.add(model);
     }
-    print(countries);
     return countries;
   }
 }

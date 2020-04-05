@@ -23,8 +23,10 @@ class _CountriesPageState
       body: Observer(
         builder: (_) {
           var c = controller.countries.value;
-          if(c==null){
-            return Center(child: CircularProgressIndicator(),);
+          if (c == null) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
           return Column(
             children: <Widget>[
@@ -41,14 +43,14 @@ class _CountriesPageState
                     ),
                     CustomWiget(
                       color: Colors.greenAccent,
-                      numberCases: 'recoved',
+                      numberCases: 'Recovered',
                     ),
                     SizedBox(
                       width: 5,
                     ),
                     CustomWiget(
                       color: Colors.red,
-                      numberCases: 'deaths',
+                      numberCases: 'Dead',
                     ),
                   ],
                 ),
@@ -73,7 +75,7 @@ class _CountriesPageState
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Expanded(
-                                flex: 3,
+                                flex: 4,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 25),
                                   child: Text(
@@ -85,31 +87,26 @@ class _CountriesPageState
                                 ),
                               ),
                               Expanded(
-                                  flex: 5,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      CustomWiget(
-                                        color: Colors.yellow,
-                                        numberCases: c[index].active.toString(),
-                                      ),
-                                      SizedBox(
-                                        width: 15,
-                                      ),
-                                      CustomWiget(
-                                        color: Colors.greenAccent,
-                                        numberCases:
-                                            c[index].recovered.toString(),
-                                      ),
-                                      SizedBox(
-                                        width: 15,
-                                      ),
-                                      CustomWiget(
-                                        color: Colors.red,
-                                        numberCases: c[index].deaths.toString(),
-                                      )
-                                    ],
-                                  ))
+                                flex: 2,
+                                child: CustomWiget(
+                                  color: Colors.yellow,
+                                  numberCases: c[index].active.toString(),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: CustomWiget(
+                                  color: Colors.greenAccent,
+                                  numberCases: c[index].recovered.toString(),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: CustomWiget(
+                                  color: Colors.red,
+                                  numberCases: c[index].deaths.toString(),
+                                ),
+                              )
                             ],
                           ),
                         ),

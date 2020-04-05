@@ -38,11 +38,13 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       backgroundColor: Color(0xFFDD9DBE9),
       appBar: AppBar(
         backgroundColor: Color(0xFFDD9DBE9),
-        title: Text(
-          widget.title,
-          style: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.w800, color: Colors.black),
-        ),
+        title: Observer(builder: (_) {
+          return Text(
+            [widget.title, 'Countries'][controller.index],
+            style: TextStyle(
+                fontSize: 25, fontWeight: FontWeight.w800, color: Colors.black),
+          );
+        }),
         elevation: 0,
       ),
       body: Observer(builder: (_) {
@@ -131,9 +133,24 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           currentIndex: controller.index,
           items: [
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.home,
-                color: Colors.black,
+              activeIcon: Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.home,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Container(
+                    height: 7,
+                    width: 7,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
               icon: Icon(
                 Icons.home,
@@ -144,9 +161,24 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               ),
             ),
             BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.search,
-                color: Colors.black,
+              activeIcon: Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Container(
+                    height: 7,
+                    width: 7,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
               icon: Icon(Icons.search),
               title: Text('Countrys'),

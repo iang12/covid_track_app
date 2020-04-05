@@ -7,23 +7,26 @@ class CustomWiget extends StatelessWidget {
   const CustomWiget({Key key, this.numberCases, this.color}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        Container(
-          height: 10,
-          width: 10,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: color,
+    return Padding(
+      padding: const EdgeInsets.only(right: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 10,
+            width: 10,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+            ),
           ),
-        ),
-        SizedBox(
-          width: 5,
-        ),
-        Text(numberCases.toString(),
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300)),
-      ],
+          SizedBox(
+            width: 10,
+          ),
+          Text(numberCases.toString(),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+        ],
+      ),
     );
   }
 }
