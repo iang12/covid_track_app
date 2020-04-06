@@ -17,7 +17,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
 
-  bool toggle = false;
   Map<String, double> dataMap = Map();
   List<Color> colorList = [
     Colors.yellow,
@@ -27,9 +26,17 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   void initState() {
     super.initState();
-    dataMap.putIfAbsent("Active", () => 7);
-    dataMap.putIfAbsent("Recovered", () => 2);
-    dataMap.putIfAbsent("Death", () => 1);
+    controller.getCases().then((value) {
+      dataMap.putIfAbsent("Active",
+          () => (controller.allCases.active * 100) / controller.allCases.cases);
+      dataMap.putIfAbsent(
+          "Recovered",
+          () =>
+              (controller.allCases.recovered * 100) /
+              controller.allCases.cases);
+      dataMap.putIfAbsent("Death",
+          () => (controller.allCases.deaths * 100) / controller.allCases.cases);
+    });
   }
 
   @override

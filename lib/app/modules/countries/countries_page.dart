@@ -81,7 +81,7 @@ class _CountriesPageState
                                   child: Text(
                                     c[index].country,
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),

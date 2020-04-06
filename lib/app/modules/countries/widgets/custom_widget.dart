@@ -8,7 +8,7 @@ class CustomWiget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 5),
+      padding: const EdgeInsets.only(right: 2),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -24,7 +24,7 @@ class CustomWiget extends StatelessWidget {
             width: 10,
           ),
           Text(numberCases.toString(),
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400)),
         ],
       ),
     );
